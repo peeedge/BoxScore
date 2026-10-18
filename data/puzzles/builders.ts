@@ -13,7 +13,9 @@ type ChoiceInput = {
 };
 
 type ClueInput = ChoiceInput & { clue: string; prompt?: string };
-type TeammatesInput = ChoiceInput & { athletes: [string, string]; prompt?: string };
+/** What the two players have in common; every pair is Eagles, so the link is never the team itself. */
+type SharedLink = "coach" | "college" | "team";
+type TeammatesInput = ChoiceInput & { athletes: [string, string]; shared: SharedLink };
 type OvertimeInput = ChoiceInput & { prompt: string; category?: string };
 type TimelineInput = {
   events: [title: string, year: number][];
@@ -40,6 +42,12 @@ export type PuzzleInput = {
 };
 
 const OPTION_IDS = ["a", "b", "c", "d"] as const;
+
+const SHARED_PROMPTS: Record<SharedLink, string> = {
+  coach: "Which head coach did both of these Eagles play for in Philadelphia?",
+  college: "Which college did both of these Eagles play for?",
+  team: "Besides the Eagles, which NFL team did both of these players suit up for?",
+};
 
 /** Every bundled question is drafted from reference sources and awaits a human fact-check. */
 const DEFAULT_STATUS: Editorial["status"] = "pending-review";
@@ -123,7 +131,7 @@ function timeline(id: string, input: TimelineInput): AuthoredQuestion {
       prompt: MODE_INFO.timeline.defaultPrompt,
       explanation: `In order: ${order}.${input.note ? ` ${input.note}` : ""}`,
       difficulty: 2,
-      category: "Sports history",
+      category: "Eagles history",
       events: presented,
       correctOrder,
     },
@@ -167,7 +175,7 @@ export function puzzle(number: number, input: PuzzleInput): AuthoredPuzzle {
         clue: input.scout.clue,
       }),
       choice(`${prefix}-teammates`, "teammates", input.teammates, {
-        prompt: input.teammates.prompt ?? MODE_INFO.teammates.defaultPrompt,
+        prompt: SHARED_PROMPTS[input.teammates.shared],
         category: "Rosters",
         difficulty: 1,
         athletes: input.teammates.athletes,

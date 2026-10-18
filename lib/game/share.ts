@@ -22,7 +22,7 @@ export function buildShareText(options: {
 }): string {
   const { puzzleNumber, results, lightning, url } = options;
   const lines = [
-    `BOX SCORE #${formatPuzzleNumber(puzzleNumber)}`,
+    `BIRD BRAIN #${formatPuzzleNumber(puzzleNumber)}`,
     `Score: ${formatPoints(totalPoints(results))}/${ROUND_COUNT}`,
     squares(results),
   ];

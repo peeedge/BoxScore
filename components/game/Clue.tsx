@@ -10,7 +10,7 @@ export function Clue({ question }: { question: Question }) {
     return (
       <div className="my-6 border-y border-rule py-5 text-center">
         <p className="sr-only">
-          The athletes are {first} and {second}.
+          The players are {first} and {second}.
         </p>
         <p aria-hidden="true" className="font-display text-[1.6rem] leading-tight tracking-tight sm:text-[1.9rem]">
           {first}

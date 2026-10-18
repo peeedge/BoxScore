@@ -123,8 +123,8 @@ function SiteFooter() {
   return (
     <footer className="border-t border-rule">
       <p className="mx-auto max-w-[42rem] px-5 py-5 text-xs leading-relaxed text-muted">
-        Box Score is an independent trivia game, not affiliated with any league or team. Athlete, team and event names are
-        used for identification only. New puzzle daily at 00:00 UTC.
+        Bird Brain is an independent fan trivia game, not affiliated with the Philadelphia Eagles or the NFL. Player, team and
+        event names are used for identification only. New puzzle daily at 00:00 UTC.
       </p>
     </footer>
   );

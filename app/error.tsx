@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/game/SiteHeader";
 
 export default function Error({ error, retry }: { error: Error & { digest?: string }; retry: () => void }) {
   useEffect(() => {
-    console.error("Box Score: unexpected error", error);
+    console.error("Bird Brain: unexpected error", error);
   }, [error]);
 
   return (

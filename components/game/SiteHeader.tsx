@@ -9,7 +9,7 @@ export function SiteHeader({ actions }: { actions?: ReactNode }) {
         <h1 className="flex items-center gap-2.5">
           <BallMark className="h-7 w-7 text-accent" />
           <span className="font-display text-[1.65rem] leading-none tracking-tight">
-            Box <em className="font-normal italic">Score</em>
+            Bird <em className="font-normal italic">Brain</em>
           </span>
         </h1>
         <div className="-mr-2 flex items-center">

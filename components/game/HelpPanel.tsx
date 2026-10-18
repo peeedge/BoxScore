@@ -11,7 +11,7 @@ export function HelpPanel() {
   return (
     <div className="space-y-6 leading-relaxed">
       <p className="font-display text-lg italic text-ink-soft">
-        Five quick rounds of sports trivia. Everyone plays the same game, and a new one tips off every day.
+        Five quick rounds of Philadelphia Eagles trivia. Everyone plays the same game, and a new one kicks off every day.
       </p>
 
       <ol className="space-y-3">
@@ -52,7 +52,7 @@ export function HelpPanel() {
       <section className="space-y-2 border-t border-rule pt-4">
         <h3 className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">New puzzles</h3>
         <p className="text-ink-soft">
-          A new game tips off every day at midnight UTC (that&apos;s {localResetTime()} where you are). Your progress is saved in
+          A new game kicks off every day at midnight UTC (that&apos;s {localResetTime()} where you are). Your progress is saved in
           this browser, so you can leave and come back.
         </p>
       </section>

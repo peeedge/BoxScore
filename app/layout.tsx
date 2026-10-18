@@ -8,13 +8,13 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  title: "Box Score — a daily sports trivia game",
+  title: "Bird Brain — a daily Philadelphia Eagles trivia game",
   description:
-    "Five quick rounds of sports trivia, the same for everyone, refreshed every day at midnight UTC. Name the athlete, connect the teammates, and put sports history in order.",
-  applicationName: "Box Score",
+    "Five quick rounds of Philadelphia Eagles trivia, the same for everyone, refreshed every day at midnight UTC. Name the Eagle, connect the teammates, and put Eagles history in order.",
+  applicationName: "Bird Brain",
   openGraph: {
-    title: "Box Score",
-    description: "Five rounds of sports trivia. One new game every day.",
+    title: "Bird Brain",
+    description: "Five rounds of Eagles trivia. One new game every day.",
     type: "website",
   },
 };

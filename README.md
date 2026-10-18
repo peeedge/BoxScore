@@ -1,6 +1,6 @@
-# Box Score
+# Bird Brain
 
-A daily sports trivia game: five rounds (Scouting Report, Locker Room, Instant Replay, Timeline and Overtime) plus a ten-question lightning bonus, the same for everyone and refreshed at midnight UTC. Puzzles live in `data/puzzles/`, and `npm run validate:puzzles` checks the bank.
+A daily Philadelphia Eagles trivia game: five rounds (Scouting Report, Locker Room, Instant Replay, Timeline and Overtime) plus a ten-question lightning bonus, the same for everyone and refreshed at midnight UTC. In the Locker Room round, each pair of Eagles shares a head coach, a college or another NFL team, set per question with `shared` in `data/puzzles/`. Puzzles live in `data/puzzles/`, and `npm run validate:puzzles` checks the bank.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -46,13 +46,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The app is built as a static export (`output: "export"`), so `npm run build` writes a plain HTML/CSS/JS site to `out/`. The whole puzzle schedule is bundled at build time and the browser picks the puzzle for the current UTC date.
 
-`.github/workflows/deploy-pages.yml` checks, builds, and publishes the site on every push to `main` (or manually from the Actions tab). One-time setup: in the repository's **Settings → Pages**, set **Source** to **GitHub Actions**. The site is then served at `https://<user>.github.io/ForReel/`; the workflow passes that `/ForReel` prefix to Next.js as `PAGES_BASE_PATH`.
+`.github/workflows/deploy-pages.yml` checks, builds, and publishes the site on every push to `main` (or manually from the Actions tab). One-time setup: in the repository's **Settings → Pages**, set **Source** to **GitHub Actions**. The site is then served at `https://<user>.github.io/<repo>/`; the workflow passes that `/<repo>` prefix to Next.js as `PAGES_BASE_PATH`.
 
 Optional repository variables, set under **Settings → Secrets and variables → Actions → Variables** (re-run the workflow after changing them):
 
 | Variable | Effect |
 | --- | --- |
 | `REEL_DAILY_LAUNCH_DATE` | `YYYY-MM-DD` date of puzzle No. 1, instead of the default. |
-| `REEL_DAILY_ALLOW_PAST_GAMES` | Earlier puzzles are listed in the Archive and can be opened with `?date=YYYY-MM-DD`, e.g. `/ForReel/?date=2026-10-01`. Set to `0` to hide the Archive and refuse `?date=`. Future dates are always refused and show today's puzzle. |
+| `REEL_DAILY_ALLOW_PAST_GAMES` | Earlier puzzles are listed in the Archive and can be opened with `?date=YYYY-MM-DD`, e.g. `/BoxScore/?date=2026-10-01`. Set to `0` to hide the Archive and refuse `?date=`. Future dates are always refused and show today's puzzle. |
 
 In development (`npm run dev`), `?date=` always works, for any date, so upcoming puzzles can be previewed. Archive puzzles count towards stats but not streaks.
