@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { BallMark } from "@/components/ui/Icons";
+import Image from "next/image";
+import logo from "@/assets/images.png";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function SiteHeader({ actions }: { actions?: ReactNode }) {
@@ -7,7 +8,13 @@ export function SiteHeader({ actions }: { actions?: ReactNode }) {
     <header className="border-b border-rule">
       <div className="mx-auto flex h-16 w-full max-w-[42rem] items-center justify-between px-5">
         <h1 className="flex items-center gap-2.5">
-          <BallMark className="h-7 w-7 text-accent" />
+          <Image
+            src={logo}
+            alt=""
+            loading="eager"
+            unoptimized
+            className="h-10 w-10 rounded-lg object-cover"
+          />
           <span className="font-display text-[1.65rem] leading-none tracking-tight">
             Bird <em className="font-normal italic">Brain</em>
           </span>

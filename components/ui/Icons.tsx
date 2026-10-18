@@ -20,18 +20,6 @@ function Svg({ children, ...props }: IconProps) {
   );
 }
 
-export function BallMark(props: IconProps) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" {...props}>
-      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" strokeWidth="2.5" />
-      <g fill="none" stroke="var(--color-ink)" strokeWidth="1.8" strokeLinecap="round">
-        <path d="M16 3.5v25M3.5 16h25" />
-        <path d="M8.3 5.5Q14.5 16 8.3 26.5M23.7 5.5Q17.5 16 23.7 26.5" />
-      </g>
-    </svg>
-  );
-}
-
 export function HelpIcon(props: IconProps) {
   return (
     <Svg {...props}>

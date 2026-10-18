@@ -44,7 +44,7 @@ export function Dialog({ open, onClose, title, children }: DialogProps) {
       onClick={(event) => {
         if (event.target === event.currentTarget) ref.current?.close();
       }}
-      className="m-auto max-h-[min(42rem,calc(100dvh-2rem))] w-[min(30rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-rule bg-paper-raised p-0 text-ink shadow-[0_24px_60px_-20px_rgb(28_26_23/0.45)] open:animate-rise"
+      className="m-auto max-h-[min(42rem,calc(100dvh-2rem))] w-[min(30rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-rule bg-paper-raised p-0 text-ink shadow-[0_24px_60px_-20px_rgb(0_0_0/0.45)] open:animate-rise"
     >
       <div className="sticky top-0 flex items-center justify-between border-b border-rule bg-paper-raised px-6 py-4">
         <h2 id={titleId} className="font-display text-2xl tracking-tight">

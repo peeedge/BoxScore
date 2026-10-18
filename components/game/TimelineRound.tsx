@@ -108,7 +108,7 @@ export function TimelineRound({ question, result, onSubmit }: Props) {
               ? "border-correct bg-correct-soft"
               : "border-incorrect bg-incorrect-soft"
             : draggingId === id
-              ? "border-ink bg-paper-raised shadow-[0_10px_24px_-12px_rgb(28_26_23/0.5)] animate-settle"
+              ? "border-ink bg-paper-raised shadow-[0_10px_24px_-12px_rgb(0_0_0/0.5)] animate-settle"
               : "border-rule bg-paper-raised";
 
           return (
