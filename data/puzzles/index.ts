@@ -3,16 +3,27 @@ import { LIGHTNING_001_010 } from "./lightning-001-010";
 import { LIGHTNING_011_020 } from "./lightning-011-020";
 import { LIGHTNING_021_030 } from "./lightning-021-030";
 import { LIGHTNING_031_040 } from "./lightning-031-040";
+import { LIGHTNING_041_050 } from "./lightning-041-050";
+import { LIGHTNING_051_060 } from "./lightning-051-060";
+import { LIGHTNING_061_070 } from "./lightning-061-070";
 import { PUZZLES_001_010 } from "./puzzles-001-010";
 import { PUZZLES_011_020 } from "./puzzles-011-020";
 import { PUZZLES_021_030 } from "./puzzles-021-030";
 import { PUZZLES_031_040 } from "./puzzles-031-040";
+import { PUZZLES_041_050 } from "./puzzles-041-050";
+import { PUZZLES_051_060 } from "./puzzles-051-060";
+import { PUZZLES_061_070 } from "./puzzles-061-070";
 
 const LIGHTNING_BY_NUMBER = new Map(
-  [...LIGHTNING_001_010, ...LIGHTNING_011_020, ...LIGHTNING_021_030, ...LIGHTNING_031_040].map((entry) => [
-    entry.number,
-    entry.lightning,
-  ]),
+  [
+    ...LIGHTNING_001_010,
+    ...LIGHTNING_011_020,
+    ...LIGHTNING_021_030,
+    ...LIGHTNING_031_040,
+    ...LIGHTNING_041_050,
+    ...LIGHTNING_051_060,
+    ...LIGHTNING_061_070,
+  ].map((entry) => [entry.number, entry.lightning]),
 );
 
 /**
@@ -24,6 +35,9 @@ export const PUZZLE_BANK: readonly AuthoredPuzzle[] = [
   ...PUZZLES_011_020,
   ...PUZZLES_021_030,
   ...PUZZLES_031_040,
+  ...PUZZLES_041_050,
+  ...PUZZLES_051_060,
+  ...PUZZLES_061_070,
 ].map((puzzle) => {
   const lightning = LIGHTNING_BY_NUMBER.get(puzzle.number);
   return lightning ? { ...puzzle, lightning } : puzzle;
